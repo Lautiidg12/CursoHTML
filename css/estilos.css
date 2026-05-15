@@ -1,0 +1,209 @@
+/*Custon properties*/
+html{
+--bg-color-200:hsl(214, 25%, 11%);
+--bg-color-400:hsl(212, 19%, 16%);
+--bg-color-400-75:hsl(212, 19%, 16%, 75%);
+--bg-color-500:hsl(212, 19%, 25%);
+/* Color del texto */
+--text-color:hsl(215, 25%, 85%);
+/* Colores de acento */
+--accent-color-200:hsl(22, 44%, 12%);
+--accent-color-400:hsl(22, 100%, 65%);
+--accent-color-500:hsl(22, 100%, 85%);
+}
+
+/* Reset de la hoja */
+* {
+    box-sizing: border-box;
+    margin: 0;
+  font-family: "Inter", sans-serif; /* Familia tipográfica */
+  font-optical-sizing: auto; /* Ajuste óptico */
+}
+
+/*Estilos generales*/
+body { 
+    background-color: var(--bg-color-200);
+    color: var(--text-color);
+}
+
+h1 { 
+    font-size: 48px; /* Cuerpo de la tipografía */
+  font-weight: 400; /* Grosor de línea */
+  /* font-style: italic; */ /* Inclinación */
+  text-align: center; /* Alineación del texto */
+}
+
+/*Estilos para el header*/
+header{
+    background-color: var(--bg-color-400);
+   /*1rem= 16px*/ padding: 1.5rem;
+   text-align: center;
+}
+
+header h1{ /*Solo se modifica el HEADER*/
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+/*Estilos para las selecciones*/
+section{
+    width: min(62rem, 100%);
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+/*Seccion de bienvenida*/
+#bienvenida{
+    min-height: 32rem;
+    background-image: url('../img/bienvenida.jpg');
+    background-size: cover;
+    padding: 0;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: stretch;
+}
+
+#bienvenida h1{
+    background-color: var(--bg-color-400-75); 
+    padding: 1.5rem 1rem;
+}
+
+/*Estilos para el footer*/
+
+    footer{
+        background-color: var(--bg-color-400);
+        padding: 2rem 1rem;
+
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    footer h1{
+        font-size: 1rem;
+        font-weight: 600;
+    }
+
+    footer ul{
+        list-style: none;
+        padding: 0;
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    footer img{
+        width: 3rem; 
+    }
+
+/*CLASE 2, 3 MODELO DE CAJA*/
+  .modelo-de-caja{
+  /*Color de fondo*/ background-color: var(--bg-color-500);
+  /*Margen interno*/ padding: 16px;
+  /*Borde, grosor, estilo, color*/ border: 2px solid var(--accent-color-400);
+  /*Margen externo*/ margin: 16px auto 32px;
+
+  /*Ancho*/ width: min(450px, 75%);
+  /*Alto*/ min-height: 250px; /*(min-heigh solo si es necesario), sino, solo heigh.*/
+  }
+
+  
+    .box-sizing-content{
+        box-sizing: content-box; /*Suma el valor del padding y borde al tamaño final del elemento*/
+    }
+    .box-sizing-border{
+        box-sizing: border-box; /*Los elementos no modifican su tamaño siguiendo el padding y borde*/
+    }
+
+/*CLASE 4: IMAGENES*/   
+    .img-item{
+        width: 12rem; /*Ancho*/
+        object-fit: cover;
+        aspect-ratio: 1 / 1; /*Resolución de la foto*/
+        border-radius: 100%; /*Modificar las puntas*/
+        filter: grayscale(100%);
+    }
+
+    .img-item:hover{ /*Cuando pasas el cursor por las imagenes se modifican*/
+        filter: grayscale(0); /*Se modifica el filtro si es que lo hay*/
+        cursor: pointer; /*Cambia el cursor*/
+        border: 0.2rem solid var(--accent-color-400) /*Se le agrega un borde*/
+    }
+
+    .img-responsive{
+        width: 100%;
+    }
+
+    /*Clase 4: Flexbox*/
+
+    .contenedor-flex-row{
+        display: flex;
+        flex-direction: row; /*Controla la direccion del eje principal*/
+        gap: 0.5rem;
+        justify-content: center;/*Controla la alineacion de los elementos siguiendo el eje principal*/
+        align-items: center; /*Controla la alineacion de los elementos siguiendo el eje secundario*/
+        background-color: var(--bg-color-500);
+        padding: 2rem;
+        min-height: 32rem;
+        margin-bottom: 2rem;
+    }
+
+    .contenedor-flex-column{
+        display: flex;
+        flex-direction: column; /*Controla la direccion del eje principal*/
+        gap: 0.5rem;
+        justify-content: center;/*Controla la alineacion de los elementos siguiendo el eje principal*/
+        align-items: stretch; /*Controla la alineacion de los elementos siguiendo el eje secundario*/
+        background-color: var(--bg-color-500);
+        padding: 2rem;
+        min-height: 32rem;
+        margin-bottom: 2rem;
+    }
+
+    .item{
+        padding: 2rem;
+        border: 0.2rem solid var(--accent-color-400);
+        text-align: center;
+
+        background-color: var(--bg-color-200);
+        border-radius: 1rem;
+       /*Solo si queres:
+        text-align: center;
+        width: 12rem;
+        object-fit: cover;
+        aspect-ratio: 1;
+        border-radius: 100%; */
+    }
+
+    /*Links y ejercicios de Novedades*/
+    /*Estilos para vinculos*/
+    a{ 
+        text-decoration: none;
+    }
+
+    /*Links para el header*/
+    a.link-h1:link, 
+    a.link-h1:visited {
+        color: var(--text-color);
+
+    }
+    
+    a.link-h1:hover,
+    a.link-h1:active {
+        color: var(--accent-color-400);
+
+    }
+
+    /*Reposo, :link*/ /*Visitado, :visited*/
+    main a:link,
+    main a:visited{
+        color: var(--accent-color-400);
+    }
+    /*Hoover, :hover*/ /*Active, :active*/
+     main a:hover,
+     main a:active{
+        color: var(--accent-color-500);
+    }
+
